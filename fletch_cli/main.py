@@ -9,7 +9,6 @@ def main():
     print('Welcome.')
     get_input('Press enter to see some examples, or ctrl+C to quit.', 'enter')
 
-
     # ----------------------------- #
     #       Arguments Example       #
     # ----------------------------- #

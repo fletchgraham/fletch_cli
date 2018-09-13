@@ -1,6 +1,7 @@
-# Print iterations progress
+"""A simple cli progress bar"""
 
 def print_progress(iteration, total):
+    """Print a progress bar showing a given level of completion."""
     iteration += 1
     prefix = 'Progress'
     suffix = 'Complete'

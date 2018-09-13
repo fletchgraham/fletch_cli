@@ -1,14 +1,16 @@
-# for better, authenticated, well formated input with error handling.
+"""Tools for making life easier when getting user input."""
 
 def get_input(prompt="Type something", expected_type="String"):
-
+    """Get authenticated, well formated input with error handling."""
     prompt += '\n>>> '
     answer = ''
 
     try:
         while True:
+            # Get some input to work with.
             answer = str(input(prompt))
 
+            # Handle different expected types.
             if expected_type.lower() in ['enter', 'return']:
                 break
 
@@ -51,6 +53,7 @@ def get_input(prompt="Type something", expected_type="String"):
         return answer
 
     except KeyboardInterrupt:
+        # Print a new line (for mac terminal) then exit.
         print()
         exit()
 

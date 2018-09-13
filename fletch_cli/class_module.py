@@ -1,4 +1,4 @@
-# Example class
+"""Example module with a class."""
 from time import sleep
 
 class MyClass():
