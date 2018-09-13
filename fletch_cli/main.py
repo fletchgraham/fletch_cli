@@ -6,7 +6,9 @@ from .class_module import MyClass
 from .function_module import my_function
 
 def main():
-    print('Welcome!')
+    print('Welcome.')
+    get_input('Press enter to see some examples, or ctrl+C to quit.', 'enter')
+
 
     # ----------------------------- #
     #       Arguments Example       #
@@ -14,24 +16,27 @@ def main():
 
     args = sys.argv[1:]
 
-    print('Number of arguments: {}'.format(len(args)))
-    print('Arguments: ')
+    print('You supplied {} arguments.'.format(len(args)))
 
-    for arg in args:
-        print('Passed argument: {}'.format(arg))
+    if args:
+        print('They were: ')
+        for arg in args:
+            print('Passed argument: {}'.format(arg))
 
     # ----------------------------- #
     #         Class Example         #
     # ----------------------------- #
 
-    my_object = MyClass('Fletcher')
+    name = get_input('What is your name?', 'String')
+    my_object = MyClass(name)
     my_object.say_name()
 
     # ----------------------------- #
     #      Progress Bar Example     #
     # ----------------------------- #
 
-    qty = get_input('How many items?', 'int')
+    print("And here is a simple progress bar.")
+    qty = get_input('How many tasks should I simulate?', 'int')
 
     # A List of Items
     items = list(range(0, qty))
@@ -47,6 +52,8 @@ def main():
 
         # Update Progress Bar
         pbar.print_bar(i + 1)
+
+    get_input("Now dig in and turn this into a useful CLI!", 'enter')
 
 if __name__ == '__main__':
     main()
