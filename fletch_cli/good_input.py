@@ -51,6 +51,7 @@ def get_input(prompt="Type something", expected_type="String"):
         return answer
 
     except KeyboardInterrupt:
+        print()
         exit()
 
 if __name__ == "__main__":
