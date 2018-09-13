@@ -1,6 +1,6 @@
 from setuptools import setup
 setup(
-    name = 'pycli',
+    name = 'fletch_cli',
     version = '0.1.0',
     packages = ['fletch_cli'],
     entry_points = {
