@@ -1,6 +1,6 @@
 import sys
 from .good_input import get_input
-from .progress_bar import print_progress_bar
+from .progress_bar import progressBar
 
 from .class_module import MyClass
 from .function_module import my_function
@@ -35,10 +35,10 @@ def main():
 
     # A List of Items
     items = list(range(0, qty))
-    len_items = len(items)
 
     # Initial call to print 0% progress
-    print_progress_bar(0, len_items, prefix = 'Progress:', suffix = 'Complete', length = 50)
+    pbar = progressBar(len(items))
+    pbar.print_bar(0)
 
     for i, item in enumerate(items):
 
@@ -46,7 +46,7 @@ def main():
         my_function()
 
         # Update Progress Bar
-        print_progress_bar(i + 1, len_items, prefix = 'Progress:', suffix = 'Complete', length = 50)
+        pbar.print_bar(i + 1)
 
 if __name__ == '__main__':
     main()
