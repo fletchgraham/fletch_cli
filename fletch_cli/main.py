@@ -29,13 +29,14 @@ def main():
 
     name = get_input('What is your name?', 'String')
     my_object = MyClass(name)
+    my_object.read_name(print_progress)
     my_object.say_name()
 
     # ----------------------------- #
     #      Progress Bar Example     #
     # ----------------------------- #
 
-    print("And here is a simple progress bar.")
+    print("Here is another progress bar example.")
     qty = get_input('How many tasks should I simulate?', 'int')
 
     # A List of Items
