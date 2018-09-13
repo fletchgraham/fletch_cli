@@ -1,5 +1,7 @@
 """A simple cli progress bar"""
 
+import sys
+
 def print_progress(iteration, total):
     """Print a progress bar showing a given level of completion."""
     iteration += 1
@@ -12,7 +14,8 @@ def print_progress(iteration, total):
     filledLength = int(length * iteration // total)
     bar = fill * filledLength + '-' * (length - filledLength)
 
-    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
+    sys.stdout.write('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix))
+    sys.stdout.flush()
 
     # Print New Line on Complete
     if iteration == total:
