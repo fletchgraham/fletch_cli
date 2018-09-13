@@ -1,6 +1,6 @@
 import sys
 from .good_input import get_input
-from .progress_bar import progressBar
+from .progress_bar import print_progress
 
 from .class_module import MyClass
 from .function_module import my_function
@@ -40,10 +40,10 @@ def main():
 
     # A List of Items
     items = list(range(0, qty))
+    items_len = len(items)
 
     # Initial call to print 0% progress
-    pbar = progressBar(len(items))
-    pbar.print_bar(0)
+    print_progress(0, items_len)
 
     for i, item in enumerate(items):
 
@@ -51,7 +51,7 @@ def main():
         my_function()
 
         # Update Progress Bar
-        pbar.print_bar(i + 1)
+        print_progress(i, items_len)
 
     get_input("Now dig in and turn this into a useful CLI!", 'enter')
 

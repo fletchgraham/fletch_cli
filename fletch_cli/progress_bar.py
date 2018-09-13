@@ -1,34 +1,18 @@
 # Print iterations progress
 
-class progressBar:
+def print_progress(iteration, total):
+    iteration += 1
+    prefix = 'Progress'
+    suffix = 'Complete'
+    length = 50
+    fill = '|'
 
-    def __init__(self,
-                 total,
-                 prefix='Progress:',
-                 suffix='Complete',
-                 decimals=1,
-                 length=50,
-                 fill='|'
-                 ):
+    percent = ("{0:.1f}").format(100 * (iteration / float(total)))
+    filledLength = int(length * iteration // total)
+    bar = fill * filledLength + '-' * (length - filledLength)
 
-        self.iteration = 0
-        self.total = total
-        self.prefix = prefix
-        self.suffix = suffix
-        self.decimals = decimals
-        self.length = length
-        self.fill = fill
+    print('\r%s |%s| %s%% %s' % (prefix, bar, percent, suffix), end = '\r')
 
-    def print_bar(self, iteration):
-
-        self.iteration = iteration
-
-        percent = ("{0:." + str(self.decimals) + "f}").format(100 * (self.iteration / float(self.total)))
-        filledLength = int(self.length * self.iteration // self.total)
-        bar = self.fill * filledLength + '-' * (self.length - filledLength)
-
-        print('\r%s |%s| %s%% %s' % (self.prefix, bar, percent, self.suffix), end = '\r')
-
-        # Print New Line on Complete
-        if self.iteration == self.total:
-            print()
+    # Print New Line on Complete
+    if iteration == total:
+        print()
