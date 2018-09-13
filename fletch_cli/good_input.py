@@ -2,14 +2,17 @@
 
 def get_input(prompt="Type something", expected_type="String"):
 
-    prompt += ' >>>'
+    prompt += '\n>>> '
     answer = ''
 
     try:
         while True:
             answer = str(input(prompt))
 
-            if answer == '':
+            if expected_type.lower() in ['enter', 'return']:
+                break
+
+            elif answer == '':
                 print("You didn't type anything.")
 
             elif expected_type.lower() in ['str', 'string']:
