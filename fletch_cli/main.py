@@ -1,6 +1,6 @@
 import sys
-from .good_input import get_input
-from .progress_bar import print_progress
+from fletch_tools.good_input import get_input
+from fletch_tools.progress_bar import print_progress
 
 from .class_module import MyClass
 from .function_module import my_function
