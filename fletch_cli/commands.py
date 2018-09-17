@@ -6,9 +6,18 @@ from fletch_tools.progress_bar import print_progress
 from .function_module import my_function
 from .class_module import MyClass
 
-def default(args):
-    """I'm the docstring for the default command."""
-    print('this will be the help.')
+# ----------------------------- #
+#          Help Example         #
+# ----------------------------- #
+
+def show_help(cmds):
+    """Show this help. then exit."""
+    print('fletch_cli commands:')
+    for i in cmds:
+        print(15 * '-')
+        print(i[0] + ':')
+        print(i[1].__doc__)
+    print(15 * '-')
 
 # ----------------------------- #
 #       Arguments Example       #
