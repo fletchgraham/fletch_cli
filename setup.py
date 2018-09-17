@@ -5,6 +5,6 @@ setup(
     packages = ['fletch_cli', 'fletch_tools'],
     entry_points = {
         'console_scripts': [
-            'fletch_cli = fletch_cli.main:main'
+            'fletch = fletch_cli.main:main'
         ]
     })
