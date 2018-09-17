@@ -24,7 +24,9 @@ def show_help(cmds):
 # ----------------------------- #
 
 def report_arguments(args):
-    """Show info about the arguments that were provided"""
+    """fletch argue [args]
+    Show info about suppied args.
+    """
     print('You supplied {} arguments.'.format(len(args)))
 
     if args:
@@ -37,7 +39,9 @@ def report_arguments(args):
 # ----------------------------- #
 
 def read_name(args):
-    """Show a progress bar example that "reads" a provided name."""
+    """fletch read [name]
+    "Read" a provided name.
+    """
     print("Here is a progress bar example:")
 
     name = get_input('What is your name?', 'String')
@@ -50,21 +54,24 @@ def read_name(args):
 # ----------------------------- #
 
 def do_tasks(args):
-    """Show a progress bar example with the provided number of tasks to sim."""
-    print("Here is a progress bar example:")
-    qty = get_input('How many tasks should I simulate?', 'int')
+    """fletch tasks [int]
+    Simulate a given number of tasks.
+    """
+    
+    print("I'll pretend to run through some tasks.")
+    try:
+        qty = int(args[1])
+    except:
+        qty = get_input('How many tasks should I simulate?', 'int')
 
-    # A List of Items
-    items = list(range(0, qty))
-    items_len = len(items)
+    # A List of Tasks
+    tasks = list(range(0, qty))
+    tasks_len = len(tasks)
 
-    # Initial call to print 0% progress
-    print_progress(0, items_len)
-
-    for i, item in enumerate(items):
+    for i, item in enumerate(tasks):
 
         # Do stuff...
         my_function()
 
         # Update Progress Bar
-        print_progress(i, items_len)
+        print_progress(i, tasks_len)

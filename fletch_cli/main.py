@@ -6,8 +6,8 @@ def main():
     cmds = [
             ('help', show_help),
             ('argue', report_arguments),
-            ('task', do_tasks),
-            ('name', read_name)
+            ('tasks', do_tasks),
+            ('read', read_name)
            ]
 
     if not args or args[0] == 'help':
