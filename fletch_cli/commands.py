@@ -42,9 +42,15 @@ def read_name(args):
     """fletch read [name]
     "Read" a provided name.
     """
+    try:
+        name = ''
+        for arg in args[1:]:
+            name += str(arg) + ' '
+    except:
+        name = get_input('What your name is?')
+        
     print("Here is a progress bar example:")
 
-    name = get_input('What is your name?', 'String')
     my_object = MyClass(name)
     my_object.read_name(print_progress)
     my_object.say_name()
